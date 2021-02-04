@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<h1>Remove From Watchlist</h1>
+<br /><br />
+
+{% if ticker %}
+
+{% for item in ticker %}
+<a href="{% url 'delete' item.id %}" class="btn btn-secondary">Remove {{ item }}</a> <br /><br />
+{% endfor %}
+
+{% else %}
+There are no Stocks In This Watchlist...You Must Add A New Stock To See It Here
+{% endif %}
+
+{% endblock %}
